@@ -1,0 +1,18 @@
+import time
+import board
+import neopixel
+ 
+pixel_pin = board.D2
+num_pixels = 12
+ 
+pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.10, auto_write=False)
+RED = (0,255,255)
+OFF = (0,0,0)
+
+while True:
+    for i in range(0,12,1):
+        pixels[i]=RED
+        pixels.show()
+        time.sleep(1)
+        pixels[i]=OFF
+        pixels.show()
